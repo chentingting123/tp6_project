@@ -42,7 +42,7 @@
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" style="width:150px" placeholder="验证码">
+        <input type="text" class="form-control" name="code" style="width:150px" placeholder="验证码">
         <span class="form-control-feedback" style="width:150px">
         <img src="{:captcha_src()}" alt="captcha" style="width: 150px;height: 34px;" onclick="yanzhen"/>
         </span>
@@ -63,17 +63,17 @@
 <!-- jQuery 3 -->
 {load href="/static/admin/bower_components/jquery/dist/jquery.min.js" /}
 <!-- Bootstrap 3.3.7 -->
-{load href="/static/admin/bower_components/bootstrap/dibootstrap.min.js" /}
+<!-- {load href="/static/admin/bower_components/bootstrap/dibootstrap.min.js" /} -->
 <!-- iCheck -->
-{load href="/static/admin/plugins/iCheck/icheck.min.js" /}
+<!-- {load href="/static/admin/plugins/iCheck/icheck.min.js" /} -->
 <script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' /* optional */
-    });
-  });
+  // $(function () {
+  //   $('input').iCheck({
+  //     checkboxClass: 'icheckbox_square-blue',
+  //     radioClass: 'iradio_square-blue',
+  //     increaseArea: '20%' /* optional */
+  //   });
+  // });
 </script>
 </body>
 </html>

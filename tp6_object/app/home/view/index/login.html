@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>点餐系统</title>
+    {load href="/static/home/css/bootstrap.min.css" /}
+    {load href="/static/home/css/common.css" /}
+</head>
+<body>
+    <div class="container">
+        <h1 class="form-heading">login Form</h1>
+        <div class="login-form">
+            <div class="main-div">
+                <div class="panel">
+                    <h2 style="font-size:26px;">点 餐 系 统 登 录 页 面</h2>
+                </div>
+                <form action="{:url('index/doLogin')}" method="post">
+                    <div class="form-group">
+                        <select name="shop_id" class="form-control">
+                            <option value="0"> - - 请选择商铺名称 - - </option>
+                            {foreach $shoplist as $shop}
+                                <option value="{$shop.id}">{$shop.name}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="username" class="form-control"  placeholder="登录账号">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="pass" class="form-control" placeholder="登录密码">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="code" style="display:inline;width:100px;float:left;" class="form-control" placeholder="验证码">
+                        <img src="{:captcha_src()}" width="140" onclick="this.src='{:captcha_src()}?sn='+Math.random()" style="float:right;margin:5px 20px;" />
+                    </div>
+
+                    <button type="submit" style="margin-top:10px" class="btn btn-primary">登录</button>
+                    
+                    <div class="form-group">
+                        <p class="login-box-msg" style="color:red">
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {load href="/static/home/js/jquery.min.js" /}
+    {load href="/static/home/js/bootstrap.min.js" /}
+</body>
+</html>

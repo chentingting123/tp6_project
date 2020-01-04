@@ -12,7 +12,7 @@ class Check
         // 判断访问的是否是后台管理
         if(app('http')->getName()==="admin"){
             // 判断请求的方法是不是login或dologin,那么就执行是否未登陆判断
-            if(!in_array($request -> action(),['login','dologin'])){
+            if(!in_array($request -> action(),['login','doLogin'])){
                 // 后台admin应用否登陆判断
                 if(!session('?adminuser')){
                     

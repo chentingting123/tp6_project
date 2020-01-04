@@ -35,7 +35,7 @@ class Index extends BaseController
             return $this->error("验证码错误");
         }
         // 获取用户信息
-        $userinfo = UserModel::where('usrname', $post_data['username'])->where('status', 6)->find();
+        $userinfo = UserModel::where('username', $post_data['username'])->where('status', 6)->find();
         //校验账号和密码
         if (empty($userinfo)) {
             return $this->error('帐号不存在或不是管理员！');
@@ -49,6 +49,13 @@ class Index extends BaseController
         dump(session('adminuser'));
         // //显示成功信息并跳转到后台管理首页
         // //return $this->success('登录成功','Index/index');
-        // return redirect("/admin/index/index");
+        return redirect("/admin/index/index");
+        // return redirect("/admin/Index/index"); //LINUX下区分大小写
+    }
+    //执行退出
+    public function logout(){
+        Session::clear();
+        $this->success('已经安全退出','Index/login');
+        // $this->success('已经安全退出','index/login');  //LINUX下区分大小写
     }
 }
